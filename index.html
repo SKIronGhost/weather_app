@@ -30,7 +30,7 @@
       var data = $('form').serializeArray()
       // console.log(data)
         // your code here (build up your url)
-        $.get("http://api.openweathermap.org/data/2.5/weather?q="+data[0].value,+data[1].value+"&units=metric&&appid=98c54694873e704542cdd7ec66d946a7", function(res) {
+        $.get("http://api.openweathermap.org/data/2.5/weather?q="+data[0].value+"&units=metric&&appid=98c54694873e704542cdd7ec66d946a7", function(res) {
           console.log(res)
             var weather = "<h1>"+res.name+"</h1><h3>Weather</h3><p>"+res.weather[0].main+"</p><h3>Minimun Temperature</h3><p>"+res.main.temp_min+" °C</p><h3>Maximum Temperature</h3><p>"+res.main.temp_max+"°C</p><h3>Humidity</h3><p>"+res.main.humidity+"%</p>"
             $("#response").html(weather)
